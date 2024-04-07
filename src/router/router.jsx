@@ -1,7 +1,5 @@
 import React, {Suspense} from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import dayjs from "dayjs";
-
 
 // LAYOUTS
 import DashboardLayout from "../layouts/dashboard/DashboardLayout.jsx";
@@ -22,6 +20,9 @@ import NotFoundPage from  "../modules/auth/pages/NotFoundPage";
 import TranslationPage from "../modules/translation/pages/TranslationPage.jsx";
 import OverlayLoader from "../components/OverlayLoader.jsx";
 import UsersPage from "../modules/users/pages/UsersPage.jsx";
+import PromoUsersPage from "../modules/promo-users/pages/PromoUsersPage.jsx";
+import PrizePage from "../modules/prize/pages/PrizePage.jsx";
+import CoursePage from "../modules/course/pages/CoursePage.jsx";
 // PAGES
 
 
@@ -33,6 +34,18 @@ const Router = ({ ...rest }) => {
           <Routes>
             <Route path={"/"} element={<DashboardLayout />}>
               <Route
+                  path={"/courses"}
+                  element={<CoursePage />}
+              />
+              <Route
+                  path={"/prizes"}
+                  element={<PrizePage />}
+              />
+              <Route
+                  path={"/promo-users"}
+                  element={<PromoUsersPage />}
+              />
+              <Route
                   path={"/users"}
                   element={<UsersPage />}
               />
@@ -42,11 +55,11 @@ const Router = ({ ...rest }) => {
               />
               <Route
                   path={"auth/*"}
-                  element={<Navigate to={"/categories"} replace />}
+                  element={<Navigate to={"/courses"} replace />}
               />
               <Route
                   path={"/"}
-                  element={<Navigate to={"/categories"} replace />}
+                  element={<Navigate to={"/courses"} replace />}
               />
               <Route path={"*"} element={<NotFoundPage />} />
             </Route>

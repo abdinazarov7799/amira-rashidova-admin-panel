@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Button, Form, Input, message, notification} from "antd";
+import {Button, Form,message} from "antd";
 import {find, get, isEqual} from "lodash";
 import {useTranslation} from "react-i18next";
 import TextArea from "antd/es/input/TextArea";
@@ -23,21 +23,15 @@ const LanguageForm = ({data,handleCancel,refetch}) => {
                 "translation",
                 ""
             ),
-            RU: get(
-                findLang(get(data, "languageSourcePs", []), "RU"),
-                "translation",
-                ""
-            )
         });
     }, [data]);
-    
+
     const onFinish = (values) => {
         mutate(
             { url: `${URLS.translations_edit}`, attributes: {
                 id: get(data,'id'),
                     key: get(data,'key'),
                     textUz: get(values,'UZ'),
-                    textRu: get(values,'RU'),
                 }},
             {
                 onSuccess: () => {
@@ -73,13 +67,6 @@ const LanguageForm = ({data,handleCancel,refetch}) => {
                 <Form.Item
                     label={t("Uzbek")}
                     name="UZ"
-                >
-                    <TextArea allowClear/>
-                </Form.Item>
-
-                <Form.Item
-                    label={t("Rus")}
-                    name="RU"
                 >
                     <TextArea allowClear/>
                 </Form.Item>

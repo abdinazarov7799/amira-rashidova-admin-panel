@@ -29,7 +29,7 @@ const TranslationContainer = () => {
         page,
     });
 
-    const findLang = (translations = [], lang = "Ru") => {
+    const findLang = (translations = [], lang = "UZ") => {
         return find(translations, (item) => isEqual(get(item, "language"), lang));
     };
     const showModal = () => {
@@ -63,20 +63,12 @@ const TranslationContainer = () => {
             }
         },
         {
-            title: t("Ru"),
-            key: "Ru",
-            width: 400,
-            render: (props, data, index) => {
-                return <>{get(findLang(get(data, "languageSourcePs", []), "RU"), "translation")}</>
-            }
-        },
-        {
             title: t("Edit"),
             width: 120,
             fixed: 'right',
             key: 'action',
             render: (props, data, index) => (
-                <Button icon={<EditOutlined />} onClick={() => {
+                <Button icon={<EditOutlined />} key={index+1} onClick={() => {
                     showModal();
                     setSelected(data)
                 }} />

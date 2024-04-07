@@ -1,11 +1,7 @@
 export const KEYS = {
     translations_list: "translations_list",
-    category_get_all: "category_get_all",
-    branch_get_all: "branch_get_all",
-    product_get_all: "product_get_all",
-    measure_get_all: "measure_get_all",
-    banner_get_all: "banner_get_all",
-    constants_get_all: "constants_get_all",
-    variation_get_all: "variation_get_all",
-    users_get_all: "users_get_all"
+    users_get_all: "users_get_all",
+    promo_users_list: "promo_users_list",
+    prize_list: "prize_list",
+    course_list: "course_list",
 };

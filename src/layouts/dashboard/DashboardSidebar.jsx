@@ -11,12 +11,20 @@ const DashboardSidebar = () => {
 
     const items = [
         {
-            label: t("Users"),
-            key: "/users",
+            label: t("Courses"),
+            key: "/courses",
         },
         {
-            label: t("Branches"),
-            key: "/branches",
+            label: t("Prizes"),
+            key: "/prizes",
+        },
+        {
+            label: t("Promo users"),
+            key: "/promo-users",
+        },
+        {
+            label: t("Users"),
+            key: "/users",
         },
         {
             label: t("Translations"),

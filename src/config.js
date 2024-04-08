@@ -1,5 +1,5 @@
 const config = {
-  API_ROOT: 'http://localhost:8092',
+  API_ROOT: 'https://amirarashidova.medias.uz/',
   DEFAULT_APP_LANG: "Uz",
 }
 export default config;

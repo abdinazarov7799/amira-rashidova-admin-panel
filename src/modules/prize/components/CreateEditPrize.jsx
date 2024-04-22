@@ -24,6 +24,7 @@ const CreateEditPrize = ({itemData,setIsModalOpen,refetch}) => {
             name: get(itemData,'name'),
             point: get(itemData,'point'),
         });
+        setIsActive(get(itemData,'active',true))
     }, [itemData]);
 
     const onFinish = (values) => {

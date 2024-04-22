@@ -1,19 +1,18 @@
 import React, {useState} from 'react';
 import Container from "../../../components/Container.jsx";
-import {Button, Input, Pagination, Popconfirm, Row, Space, Switch, Table} from "antd";
+import {Input, Pagination, Row, Space, Table} from "antd";
 import {get} from "lodash";
 import {useTranslation} from "react-i18next";
 import usePaginateQuery from "../../../hooks/api/usePaginateQuery.js";
 import {KEYS} from "../../../constants/key.js";
 import {URLS} from "../../../constants/url.js";
-import {LockOutlined, UnlockOutlined} from "@ant-design/icons";
 
 const PromoUsersContainer = () => {
     const {t} = useTranslation();
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(10);
     const [searchKey,setSearchKey] = useState();
-    const {data,isLoading,isFetching,refetch} = usePaginateQuery({
+    const {data,isLoading} = usePaginateQuery({
         key: KEYS.promo_users_list,
         url: URLS.promo_users_list,
         params: {

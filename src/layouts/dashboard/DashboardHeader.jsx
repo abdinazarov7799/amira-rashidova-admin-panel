@@ -34,12 +34,12 @@ const DashboardHeader = () => {
 
     let items = [
         {
-            key: "Ru",
-            icon: <Image src={ru} preview={false} onClick={() => changeLang("Ru")}  width={25} height={25} alt={"russian flag image"} />,
+            key: "RU",
+            icon: <Image src={ru} preview={false} onClick={() => changeLang("RU")}  width={25} height={25} alt={"russian flag image"} />,
         },
         {
-            key: "Uz",
-            icon: <Image src={uz} preview={false} onClick={() => changeLang("Uz")} width={25} height={25} alt={"uzbek flag image"} />,
+            key: "UZ",
+            icon: <Image src={uz} preview={false} onClick={() => changeLang("UZ")} width={25} height={25} alt={"uzbek flag image"} />,
         },
     ].filter(item => !isEqual(get(item,"key"),lang));;
     const logout = () => {

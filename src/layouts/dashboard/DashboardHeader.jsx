@@ -100,7 +100,7 @@ const DashboardHeader = () => {
                           overlayClassName={"language-dropdown"}
                           over
                       >
-                          <Image src={isEqual(lang,"Ru") ? ru : uz} preview={false} width={30} height={30} alt={"flag image"} />
+                          <Image src={isEqual(lang,"RU") ? ru : uz} preview={false} width={30} height={30} alt={"flag image"} />
                       </Dropdown>
                       <Button
                           icon={<LogoutOutlined />}
